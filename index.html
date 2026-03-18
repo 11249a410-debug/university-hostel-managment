@@ -1,0 +1,170 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>University Hostel Details</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f4f6f9;
+    }header {
+  background-color: #2c3e50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.container {
+  padding: 20px;
+}
+
+h2 {
+  color: #2c3e50;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ccc;
+}
+
+th, td {
+  padding: 10px;
+  text-align: center;
+}
+
+th {
+  background-color: #34495e;
+  color: white;
+}
+
+.yes {
+  color: green;
+  font-weight: bold;
+}
+
+.no {
+  color: red;
+  font-weight: bold;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+input, textarea, select, button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #27ae60;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #219150;
+}
+
+  </style>
+</head>
+<body><header>University Hostel Details</header><div class="container">  <!-- Room Details -->  <div class="card">
+    <h2>Room Availability</h2>
+    <table>
+      <tr>
+        <th>Room Type</th>
+        <th>Total Rooms</th>
+        <th>Available</th>
+      </tr>
+      <tr>
+        <td>Single</td>
+        <td>50</td>
+        <td class="yes">Yes</td>
+      </tr>
+      <tr>
+        <td>Double</td>
+        <td>100</td>
+        <td class="no">No</td>
+      </tr>
+      <tr>
+        <td>Triple</td>
+        <td>80</td>
+        <td class="yes">Yes</td>
+      </tr>
+    </table>
+  </div>  <!-- Food Menu -->  <div class="card">
+    <h2>Weekly Food Menu</h2>
+    <table>
+      <tr>
+        <th>Day</th>
+        <th>Breakfast</th>
+        <th>Lunch</th>
+        <th>Dinner</th>
+      </tr>
+      <tr><td>Monday</td><td>Idli & Sambar</td><td>Rice, Dal, Veg Curry</td><td>Chapati & Paneer</td></tr>
+      <tr><td>Tuesday</td><td>Dosa</td><td>Veg Biryani</td><td>Rice & Sambar</td></tr>
+      <tr><td>Wednesday</td><td>Pongal</td><td>Curd Rice</td><td>Chapati & Veg Kurma</td></tr>
+      <tr><td>Thursday</td><td>Upma</td><td>Rice, Rasam</td><td>Fried Rice</td></tr>
+      <tr><td>Friday</td><td>Poori</td><td>Meals</td><td>Chapati & Dal</td></tr>
+      <tr><td>Saturday</td><td>Bread & Jam</td><td>Tomato Rice</td><td>Noodles</td></tr>
+      <tr><td>Sunday</td><td>Vada</td><td>Special Meals</td><td>Chapati & Paneer Butter Masala</td></tr>
+    </table>
+  </div>  <!-- Laundry -->  <div class="card">
+    <h2>Laundry Details</h2>
+    <p>Laundry service is available <strong>once per week</strong>.</p>
+    <p>Each student is allowed up to <strong>10 buckets</strong> of clothes per week.</p>
+  </div>  <!-- Complaint Section -->  <div class="card">
+    <h2>Raise a Complaint</h2>
+    <form id="complaintForm">
+      <input type="text" id="name" placeholder="Your Name" required>
+      <textarea id="complaint" placeholder="Enter your complaint" required></textarea>
+      <select id="status">
+        <option value="Noticed">Noticed</option>
+        <option value="Action Taken">Action Taken</option>
+        <option value="Cleared">Cleared</option>
+      </select>
+      <button type="submit">Submit Complaint</button>
+    </form><h3>Complaint Status</h3>
+<table id="complaintTable">
+  <tr>
+    <th>Name</th>
+    <th>Complaint</th>
+    <th>Status</th>
+  </tr>
+</table>
+
+  </div></div><script>
+  const form = document.getElementById("complaintForm");
+  const table = document.getElementById("complaintTable");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const complaint = document.getElementById("complaint").value;
+    const status = document.getElementById("status").value;
+
+    const row = table.insertRow();
+    row.insertCell(0).innerText = name;
+    row.insertCell(1).innerText = complaint;
+    row.insertCell(2).innerText = status;
+
+    form.reset();
+  });
+</script></body>
+</html>
